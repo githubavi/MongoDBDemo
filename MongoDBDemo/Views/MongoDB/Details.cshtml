@@ -1,0 +1,42 @@
+﻿@model MongoDBDemo.Models.MovieModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Movies</legend>
+    <div class="display-label">
+         @Html.LabelFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.LabelFor(model => model.Director)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Director)
+    </div>
+
+    <div class="display-label">
+         @Html.LabelFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+
+    <div class="display-label">
+         @Html.LabelFor(model => model.Artists)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Artists)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model._id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

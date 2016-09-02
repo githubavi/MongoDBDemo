@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                To learn more about MongoDB visit
+                <a href="http://www.mongodb.org" title="MongoDB MVC Website">http://www.mongodb.org</a>.
+            </p>
+        </div>
+    </section>
+}
+<h3>Dis you follow these steps before running this application ?</h3>
+<ol class="round">
+    <li class="one">
+       a. Download MongoDB from http://www.mongodb.org/downloads <br />
+	   b. Install MongoVue (GUI tool for MongoDB) -- http://www.mongovue.com/downloads/
+    </li>
+
+    <li class="two">
+       Create the follwoing folder structure,<br />
+	        c:\mongodb\data<br />
+	        c:\mongodb\log<br />
+    </li>
+
+    <li class="three">
+        Go to MongoDB Installation "bin" folder <br />
+        (it contains "mongod.exe", "mongo.exe" etc.)
+    </li>
+
+    <li class="four">
+        Run the following from command prompt <br />
+        >mongod --rest --auth --logpath c:\mongodb\log\mongod.log  --dbpath c:\mongodb\data --port 27019
+    </li>
+
+    <li class="five">
+        Connect to this instance using "MongoVue". Create a connection entry using following parameters,<br />
+		a. Name -> Any alphanumeric name<br />
+		b. Server -> localhost<br />
+		c. Port -> 27019<br />
+		d. Database(s) -> admin<br />
+    </li>
+
+    <li class="six">
+        Now, follow {connection name} -> "admin" -> "Users" path in MongoVUE GUI and create the following user<br />
+        using "Add" button - UserName - "admin"<br />
+						Password - "admin"<br />
+						Read Only - Unchecked (default)
+    </li>
+
+    <li class="seven">
+        Now, disconnect and connect to the same mongod instance again using MongoVue, just change the connection<br />
+        entry by adding,<br />
+				UserName - admin<br />
+				Password - admin<br />
+    </li>
+
+    <li class="eight">
+        Now you build this "MongoDBDemo" project <br />
+        and run the demo application
+    </li>
+
+    <li class="nine">
+        <b>Note: If you want see the data actually being populated and stored in Mongo Database, use MongoVue. <br />
+	  Change database name to "MovieDB" in MongoVue connection parameter</b>
+    </li>
+</ol>

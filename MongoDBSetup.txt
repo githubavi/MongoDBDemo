@@ -1,0 +1,30 @@
+﻿1. Install MongoVue (GUI tool for MongoDB) -- http://www.mongovue.com/downloads/
+
+2. Create the follwoing folder structure,
+	c:\mongodb\data
+	c:\mongodb\log
+
+3. Go to MongoDB Installation "bin" folder (it contains "mongod.exe", "mongo.exe" etc.)
+
+4. Run the following from command prompt -
+   >mongod --rest --auth --logpath c:\mongodb\log\mongod.log  --dbpath c:\mongodb\data --port 27019
+
+5. Connect to this instance using "MongoVue". Create a connection entry using following parameters,
+		a. Name -> Any alphanumeric name
+		b. Server -> localhost
+		c. Port -> 27019
+		d. Database(s) -> admin
+
+6. Now, follow <connection name> -> "admin" -> "Users" path in MongoVUE GUI and create the following user
+   using "Add" button - UserName - "admin"
+						Password - "admin"
+						Read Only - Unchecked (default)
+
+7. Now, disconnect and connect to the same mongod instance again using MongoVue, just change the connection
+entry by adding,
+				UserName - admin
+				Password - admin
+
+8.Now you build this "MongoDBDemo" project and run the demo
+
+9. If you want see the data actually being populated and stored in Mongo Database, use MongoVue
